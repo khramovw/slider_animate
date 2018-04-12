@@ -1,0 +1,82 @@
+/* @mixins */
+
+// сетка
+//$width: 60;
+//$gutter: 10;
+//$column: 12;
+
+//.container{
+//    margin-right: auto;
+//    margin-left: auto;
+//    padding-left: $gutter + px;
+//    padding-right: $gutter + px;
+//    .row{
+//        margin-left: -$gutter + px;
+//        margin-right: -$gutter + px;
+//        & > [class*='col-']{
+//            position: relative;
+//            min-height: 1px;
+//            float: left;
+//            padding-left: $gutter + px;
+//            padding-right: $gutter + px;
+//        }
+//    }
+//}
+//@for $i from 1 through $column {
+//    .col-#{$i}{
+//        width: (( $width / $column ) * $i ) * 1% ;
+//    }
+//}
+
+//стрелка
+//@mixin arrow($width, $height, $bg, $direction){
+//    width: 0;
+//    height: 0;
+//    border-style: solid;
+//    @if $direction == top{
+//        border-width: 0 $width / 2 + px $width + px $width / 2 + px;
+//        border-color: transparent transparent $bg transparent;
+//    }
+//    @if $direction == right{
+//        border-width: $width / 2 + px 0 $width + px $width / 2 + px;
+//        border-color: transparent transparent transparent $bg;
+//    }
+//    @if $direction == bottom{
+//        border-width: $width / 2 + px $width + px 0 $width / 2 + px;
+//        border-color: $bg transparent transparent transparent;
+//    }
+//    @if $direction == left{
+//        border-width: $width / 2 + px $width + px $width / 2 + px 0;
+//        border-color: transparent $bg transparent transparent;
+//    }
+//}
+//.arrow{
+//    @include arrow( 30, 40, red, left );
+//}
+
+//circle
+//@mixin circle($size,$color){
+//    @if $size == 0 {
+//        width:  $size;
+//        height: $size;
+//        background-color: $color;
+//    }
+//    @if $size > 0 {
+//        width:  $size + px;
+//        height: $size + px;
+//        background-color: $color;
+//    }
+//}
+//.circle{
+//    @include circle(1, blue)
+//}
+
+
+
+
+
+
+
+
+
+
