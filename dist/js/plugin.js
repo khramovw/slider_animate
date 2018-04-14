@@ -2,8 +2,6 @@
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _gsap = require('gsap');
-
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 /* js */
@@ -84,15 +82,15 @@ PubSub.subscribe('gotoSlide', function (msg, data) {
 
     console.log(msg, data);
 
-    //  $('[data-slide='+data.from+'], [data-gotoslide='+data.from+']').removeClass('is-active');
+    $('[data-slide=' + data.from + '], [data-gotoslide=' + data.from + ']').removeClass('is-active');
 
-    //  $('[data-slide='+data.to+'], [data-gotoslide='+data.to+']').addClass('is-active');
+    $('[data-slide=' + data.to + '], [data-gotoslide=' + data.to + ']').addClass('is-active');
 
-
-    var currentSlide = $('[data-slide=' + data.from + '], [data-gotoslide=' + data.from + ']');
-    var newSide = $('[data-slide=' + data.to + '], [data-gotoslide=' + data.to + ']');
-
-    var tl = new _gsap.TimelineMax();
-
-    tl.fromTo(currentSlide, 1, { opacity: 0 }).to(newSide, 1, { opacity: 1 });
+    // let currentSlide = $('[data-slide='+data.from+'], [data-gotoslide='+data.from+']');
+    // let newSide = $('[data-slide='+data.to+'], [data-gotoslide='+data.to+']');
+    //
+    // let tl = new TimelineMax;
+    //
+    // tl.fromTo(currentSlide,1,{opacity:0})
+    //     .to(newSide,1,{opacity:1});
 });

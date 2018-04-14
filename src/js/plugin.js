@@ -1,5 +1,3 @@
-import { TimelineMax } from "gsap";
-
 /* js */
 
 
@@ -77,17 +75,17 @@ PubSub.subscribe('gotoSlide', function (msg, data) {
 
     console.log(msg, data);
 
-    //  $('[data-slide='+data.from+'], [data-gotoslide='+data.from+']').removeClass('is-active');
+     $('[data-slide='+data.from+'], [data-gotoslide='+data.from+']').removeClass('is-active');
 
-    //  $('[data-slide='+data.to+'], [data-gotoslide='+data.to+']').addClass('is-active');
+     $('[data-slide='+data.to+'], [data-gotoslide='+data.to+']').addClass('is-active');
 
 
-    let currentSlide = $('[data-slide='+data.from+'], [data-gotoslide='+data.from+']');
-    let newSide = $('[data-slide='+data.to+'], [data-gotoslide='+data.to+']');
-    
-    let tl = new TimelineMax;
-    
-    tl.fromTo(currentSlide,1,{opacity:0})
-        .to(newSide,1,{opacity:1});
+    // let currentSlide = $('[data-slide='+data.from+'], [data-gotoslide='+data.from+']');
+    // let newSide = $('[data-slide='+data.to+'], [data-gotoslide='+data.to+']');
+    //
+    // let tl = new TimelineMax;
+    //
+    // tl.fromTo(currentSlide,1,{opacity:0})
+    //     .to(newSide,1,{opacity:1});
 
 });
