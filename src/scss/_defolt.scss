@@ -5,6 +5,7 @@
 section{
   height: 100vh;
   width: 100%;
+  display: flex;
 }
 .container{
   width: 1140px;
@@ -15,19 +16,27 @@ section{
 }
 .pagination{
   position: absolute;
-  z-index: 999;
-  left: -4%;
-  height: -webkit-fill-available;
+  top: 50%;
+  //bottom: 0;
+  z-index: 99;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  li{
+    justify-content: center;
+    align-items: center;
+    display: inherit;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    border: 2px solid $accentColor;
+    margin: 12px;
+  }
   a{
-    height: 20px;
-    width: 20px;
+    height: 50%;
+    width: 50%;
     display: inline-block;
     border-radius: 50%;
-    background-color: $accentColor;
-    margin: 12px;
     transition: all .5s linear;
     &.is-active{
       background-color: #ef9a9a ;
@@ -36,11 +45,11 @@ section{
   }
 }
 .slide{
-  height: -webkit-fill-available;
   position: absolute;
   top: 0;
   left: 0;
   display: flex;
+  align-items: center;
   flex-direction: row;
   background-color: $bodyBgColor;
   opacity: 0;
@@ -50,8 +59,8 @@ section{
     width: 50%;
   }
   &.is-active{
-    opacity: 1;
-    transition: all .3s linear;
+    //opacity: 1;
+    //transition: all .3s linear;
   }
 }
 .slide-text, .slide-item{
@@ -60,6 +69,7 @@ section{
 .slide-text{
   flex-direction: column;
   justify-content: center;
+  align-items: flex-start;
   padding-left: 5%;
   .sl-tile{
     text-transform: uppercase;
@@ -74,6 +84,7 @@ section{
   }
 }
 .slide-item{
+  position: relative;
   align-items: center;
   img:nth-child(1){
     max-width: 100%;

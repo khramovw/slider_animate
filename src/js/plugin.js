@@ -1,20 +1,17 @@
-/* js */
-
-
-
-let slider      = document.getElementById('slider-gaps');
-let pagination  = document.querySelectorAll('#pagination li a');
-
-
-console.dir(pagination);
+let tl              = TweenLite;
+let slider          = document.getElementById('slider-gaps');
+let paginationBtn   = document.querySelectorAll('#pagination li a');
+let slideAll        = slider.querySelectorAll('.slide');
 
 class SliderGsap{
+
     constructor(){
+
         this.scrollEvent();
         this.cliclEvent();
-        this.activeSlide =1;
-        this.canGo = true;
-        this.maxSlide = 5;
+        this.activeSlide    = 1;
+        this.canGo          = true;
+        this.maxSlide       = 5;
 
     }
 
@@ -31,7 +28,7 @@ class SliderGsap{
             if( newSlide > this.maxSlide ) newSlide = 1;
             if( newSlide < 1 ) newSlide = 5;
 
-            PubSub.publish('gotoSlide', { from: this.activeSlide, to: newSlide });
+            PubSub.publish('gotoSlide', { from: this.activeSlide, to: +newSlide });
 
             this.activeSlide = newSlide;
 
@@ -45,7 +42,7 @@ class SliderGsap{
 
     cliclEvent(){
 
-        let linkNav = [].slice.call(pagination);
+        let linkNav = [].slice.call(paginationBtn);
 
         linkNav.forEach( el => {
 
@@ -73,19 +70,45 @@ let slide = new SliderGsap();
 
 PubSub.subscribe('gotoSlide', function (msg, data) {
 
-    console.log(msg, data);
 
-     $('[data-slide='+data.from+'], [data-gotoslide='+data.from+']').removeClass('is-active');
-
-     $('[data-slide='+data.to+'], [data-gotoslide='+data.to+']').addClass('is-active');
-
-
-    // let currentSlide = $('[data-slide='+data.from+'], [data-gotoslide='+data.from+']');
-    // let newSide = $('[data-slide='+data.to+'], [data-gotoslide='+data.to+']');
+    // function setActiveEl(isEl, isAtrr, isClass){
     //
-    // let tl = new TimelineMax;
+    //     console.log(':|',isEl, ':|');
     //
-    // tl.fromTo(currentSlide,1,{opacity:0})
-    //     .to(newSide,1,{opacity:1});
+    //     isEl.forEach( (sl,el) => {
+    //
+    //         if ( sl.dataset.isAtrr == data.from ) sl.classList.remove(isClass);
+    //         if ( sl.dataset.isAtrr == data.to ) sl.classList.add(isClass);
+    //
+    //         console.log(':|',sl.attributes["0"], ':|', el);
+    //     });
+    //
+    // }
+    //
+    // setActiveEl(slideAll, slide,'is-active');
+    // setActiveEl(paginationBtn, gotoslide 'is-active');
+
+    slideAll.forEach( sl => {
+
+        if ( sl.dataset.slide == data.from ) tl.fromTo(sl, .25, {opacity:1}, {opacity:0});
+        if ( sl.dataset.slide == data.to ) tl.fromTo(sl, .25, {opacity:0}, {opacity:1});
+
+        // tl.fromTo(sl.dataset.item == 1 , .3, {opacity:0, width: 30}, {opacity:1, width: 40});
+
+
+        let getImg = document.getElementsByTagName('img');
+        console.log(getImg);
+
+
+    });
+
+    paginationBtn.forEach( btnSl => {
+
+        if ( btnSl.dataset.gotoslide == data.from ) btnSl.classList.remove('is-active');
+        if ( btnSl.dataset.gotoslide == data.to ) btnSl.classList.add('is-active');
+
+    });
 
 });
+
+

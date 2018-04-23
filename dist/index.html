@@ -21,72 +21,76 @@
                         <li><a data-gotoslide="5" href="#"></a></li>
                     </ul>
                 </nav>
-                <div data-slide="1" class="slide is-active">
+                <!--SLIDE START-->
+                <div data-slide="1" class="slide is-active" style="opacity: 1;">
                     <div class="slide-text">
                         <div class="sl-tile">slide 1 </div>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem expedita ipsum nobis possimus. Aliquam aliquid, dicta distinctio dolorem expedita facilis fugit iste molestiae, nostrum officiis quod reiciendis sint vel voluptatum?</p>
                     </div>
                     <div class="slide-item">
-                        <img src="img/1.png" alt="">
+                        <img data-item="10" src="img/1.png" alt="">
                     </div>
                 </div>
-                <!--/slide-->
+                <!--SLIDE END-->
+                <!--SLIDE START-->
                 <div data-slide="2" class="slide">
                     <div class="slide-text">
                         <div class="sl-tile">slide 2</div>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusantium animi blanditiis delectus eius ipsum itaque laudantium maxime molestias neque nihil nisi, nobis officiis quae ratione reiciendis rem. Fuga, minima!</p>
                     </div>
                     <div class="slide-item">
-                        <img src="img/2.png" alt="">
+                        <img data-item="20" src="img/2.png" alt="">
+                        <img data-item="21" src="img/2_1.png" alt="" style="width: 42%;position: absolute;top: 14.2%;left: 23.8%;">
                     </div>
                 </div>
-                <!--/slide-->
+                <!--SLIDE END-->
+                <!--SLIDE START-->
                 <div data-slide="3" class="slide">
                     <div class="slide-text">
                         <div class="sl-tile">slide 3</div>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias aspernatur assumenda atque consectetur doloremque eaque earum fugiat illum inventore, iste maiores mollitia natus recusandae repellat soluta ullam veritatis, voluptas?</p>
                     </div>
                     <div class="slide-item">
-                        <img src="img/3.png" alt="">
+                        <img data-item="30" src="img/3.png" alt="">
+                        <img data-item="31" src="img/3_1.png" alt="" style="width: 40%;position: absolute;top: 38.8%;left: 32.2%;">
                     </div>
                 </div>
-                <!--/slide-->
+                <!--SLIDE END-->
+                <!--SLIDE START-->
                 <div data-slide="4" class="slide">
                     <div class="slide-text">
                         <div class="sl-tile">slide 4</div>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque quae sunt vero. Alias assumenda consequuntur culpa cumque, dolore hic libero magnam modi mollitia odio quibusdam similique, sit tenetur unde voluptatum!</p>
                     </div>
                     <div class="slide-item">
-                        <img src="img/4.png" alt="">
+                        <img data-item="40" src="img/4.png" alt="">
+                        <img data-item="41" src="img/4_1.png" alt="" style="width: 40%;position: absolute;top: 49.8%;left: 25.2%;">
                     </div>
                 </div>
-                <!--/slide-->
+                <!--SLIDE END-->
+                <!--SLIDE START-->
                 <div data-slide="5" class="slide">
                     <div class="slide-text">
                         <div class="sl-tile">slide 5</div>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aliquam asperiores atque, consequuntur id iusto odio saepe vitae. Accusantium alias corporis doloribus eaque et exercitationem ipsam praesentium quod reiciendis voluptate!</p>
                     </div>
                     <div class="slide-item">
-                        <img src="img/5.png" alt="">
+                        <img data-item="50" src="img/5.png" alt="">
                     </div>
                 </div>
-                <!--/slide-->
+                <!--SLIDE END-->
             </div>
         </div>
     </section>
 <!--SLIDER GAPS END-->
 
-<!-- jQuery -->
-<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-
-<!--green sock-->
-<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>-->
-<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/plugins/CSSPlugin.min.js"></script>-->
-<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/easing/EasePack.min.js"></script>-->
-<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenLite.min.js"></script>-->
-
-<!--pubsub-->
+<!--PubSub-->
 <script src="libs/pubsub.js"></script>
+
+<!--GSAP-->
+<script src="libs/greensock-js/src/minified/plugins/CSSPlugin.min.js"></script>
+<script src="libs/greensock-js/src/minified/easing/EasePack.min.js"></script>
+<script src="libs/greensock-js/src/minified/TweenLite.min.js"></script>
 
 <!--plugin-->
 <script src="js/plugin.js"></script>

@@ -5,7 +5,7 @@
 
 *{
   font-family: $generalFont;
-  font-size: 16px;
+  font-size: calc( 100vw / 1920 * 10 );
   font-weight: 400;
   line-height: 1;
   &:focus {
