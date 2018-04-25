@@ -1,3 +1,8 @@
 @import "customvaribles";
 
 /* @media */
+@media( max-width: 1366px) {
+  .container{
+    width: 144rem;
+  }
+}

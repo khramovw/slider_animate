@@ -11,41 +11,42 @@
 <!--SLIDER GAPS-->
     <section id="slider-gaps" class="slider-gaps">
         <div class="container">
+            <nav id="dot">
+                <ul id="pagination" class="pagination">
+                    <li class="btn-dot" style="visibility: hidden;"><a data-gotoslide="1" href="#" class="is-active" ></a></li>
+                    <li class="btn-dot" style="visibility: hidden;"><a data-gotoslide="2" href="#"></a></li>
+                    <li class="btn-dot" style="visibility: hidden;"><a data-gotoslide="3" href="#"></a></li>
+                    <li class="btn-dot" style="visibility: hidden;"><a data-gotoslide="4" href="#"></a></li>
+                    <li class="btn-dot" style="visibility: hidden;"><a data-gotoslide="5" href="#"></a></li>
+                </ul>
+            </nav>
             <div class="row">
-                <nav>
-                    <ul id="pagination" class="pagination">
-                        <li><a data-gotoslide="1" href="#" class="is-active" ></a></li>
-                        <li><a data-gotoslide="2" href="#"></a></li>
-                        <li><a data-gotoslide="3" href="#"></a></li>
-                        <li><a data-gotoslide="4" href="#"></a></li>
-                        <li><a data-gotoslide="5" href="#"></a></li>
-                    </ul>
-                </nav>
                 <!--SLIDE START-->
-                <div data-slide="1" class="slide is-active" style="opacity: 1;">
+                <div data-slide="1" data-state = 'visibility' class="slide is-active" style="opacity: 1;">
                     <div class="slide-text">
                         <div class="sl-tile">slide 1 </div>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem expedita ipsum nobis possimus. Aliquam aliquid, dicta distinctio dolorem expedita facilis fugit iste molestiae, nostrum officiis quod reiciendis sint vel voluptatum?</p>
                     </div>
                     <div class="slide-item">
-                        <img data-item="10" src="img/1.png" alt="">
+                        <img data-item="10" src="img/1.png" alt="" style="visibility: inherit; max-width: 100%;">
+                        <img data-item="20" src="img/02.png" alt="" style="visibility: hidden; max-width: 100%; top:0">
                     </div>
                 </div>
                 <!--SLIDE END-->
                 <!--SLIDE START-->
-                <div data-slide="2" class="slide">
+                <div data-slide="2" data-state = 'hidden' class="slide is-hidden">
                     <div class="slide-text">
                         <div class="sl-tile">slide 2</div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusantium animi blanditiis delectus eius ipsum itaque laudantium maxime molestias neque nihil nisi, nobis officiis quae ratione reiciendis rem. Fuga, minima!</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusamus ad aliquid cum excepturi id inventore maxime, nam nostrum odit possimus quaerat quam quis quos rerum sit soluta, voluptatem voluptatibus.</p>
                     </div>
                     <div class="slide-item">
                         <img data-item="20" src="img/2.png" alt="">
-                        <img data-item="21" src="img/2_1.png" alt="" style="width: 42%;position: absolute;top: 14.2%;left: 23.8%;">
+                        <img data-item="21" src="img/2_1.png" alt="" style="width: 42%;position: absolute;top: 16.2%;left: 23.8%;">
                     </div>
                 </div>
                 <!--SLIDE END-->
                 <!--SLIDE START-->
-                <div data-slide="3" class="slide">
+                <div data-slide="3" data-state = 'hidden' class="slide is-hidden">
                     <div class="slide-text">
                         <div class="sl-tile">slide 3</div>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias aspernatur assumenda atque consectetur doloremque eaque earum fugiat illum inventore, iste maiores mollitia natus recusandae repellat soluta ullam veritatis, voluptas?</p>
@@ -57,7 +58,7 @@
                 </div>
                 <!--SLIDE END-->
                 <!--SLIDE START-->
-                <div data-slide="4" class="slide">
+                <div data-slide="4" data-state = 'hidden' class="slide is-hidden">
                     <div class="slide-text">
                         <div class="sl-tile">slide 4</div>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque quae sunt vero. Alias assumenda consequuntur culpa cumque, dolore hic libero magnam modi mollitia odio quibusdam similique, sit tenetur unde voluptatum!</p>
@@ -69,7 +70,7 @@
                 </div>
                 <!--SLIDE END-->
                 <!--SLIDE START-->
-                <div data-slide="5" class="slide">
+                <div data-slide="5" data-state = 'hidden' class="slide is-hidden">
                     <div class="slide-text">
                         <div class="sl-tile">slide 5</div>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aliquam asperiores atque, consequuntur id iusto odio saepe vitae. Accusantium alias corporis doloribus eaque et exercitationem ipsam praesentium quod reiciendis voluptate!</p>
@@ -91,6 +92,7 @@
 <script src="libs/greensock-js/src/minified/plugins/CSSPlugin.min.js"></script>
 <script src="libs/greensock-js/src/minified/easing/EasePack.min.js"></script>
 <script src="libs/greensock-js/src/minified/TweenLite.min.js"></script>
+<script src="libs/greensock-js/src/minified/TimelineLite.min.js"></script>
 
 <!--plugin-->
 <script src="js/plugin.js"></script>
