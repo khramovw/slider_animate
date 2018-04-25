@@ -96,30 +96,62 @@ PubSub.subscribe('gotoSlide', function (msg, data) {
             sl.classList.remove('is-active');
             sl.dataset.state = ('hidden');
 
+            // if ( data.from == 1 ) {
+            //     console.log('| data.from == 1 |', sl.childNodes);
+            //     tl.to(sl.childNodes[3].childNodes[1], 0.3, {  autoAlpha:0 })
+            //         .to(sl.childNodes[3].childNodes[3], 0.3, {  autoAlpha:1 }, '-=0.3')
+            //             .to(sl, 0.25, {autoAlpha:0, delay: 0.25 });
+            //
+            // }
+
             if ( data.from == 1 ) {
+
+                tl.to(sl, 0.25, {autoAlpha:0, delay: 0.25 });
+
                 console.log('| data.from == 1 |', sl.childNodes);
-                tl.to(sl.childNodes[3].childNodes[1], 0.3, {  autoAlpha:0 })
-                    .to(sl.childNodes[3].childNodes[3], 0.3, {  autoAlpha:1 }, '-=0.3')
-                        .to(sl, 0.25, {autoAlpha:0, delay: 0.25 });
 
             }
+
             if ( data.from == 2 ) {
-                console.log('| data.from == 2 |');
+
                 tl.to(sl.childNodes[3].childNodes[3], 0.3, { top: "16.2%",left: "23.8%",width: "42%", ease: Power4.easeOut})
                     .to(sl.childNodes[3].childNodes[3], 0.1, { autoAlpha:0, delay: 0.25 })
                         .to(sl, 0.25, {autoAlpha:0, ease: Power4.easeOut }, '-=0.3');
-                
+
+                console.log('| data.from == 2 |', sl.childNodes);
             }
+
             if ( data.from == 3 ) {
-                console.log('| data.from == 3 |');
 
                 tl.to(sl.childNodes[3].childNodes[3], 0.3, {top: "44%",left: "32%",width: "41%", ease: Power4.easeOut })
                     .to(sl.childNodes[3].childNodes[3], 0.1, {autoAlpha:0, delay: 0.25 })
                         .to(sl, 0, {autoAlpha:0 }, '-=0.3');
 
+                console.log('| data.from == 3 |', sl.childNodes);
+
             }
 
-            console.log('*** sl.dataset.slide ***', sl.dataset.slide);
+            if ( data.from == 4 ) {
+
+                tl.to(sl.childNodes[3].childNodes[3], 0.3, {top: "54%",left: "24%",width: "40%", ease: Power4.easeOut })
+                    .to(sl.childNodes[3].childNodes[3], 0.1, {autoAlpha:0})
+                        .to(sl, 0, {autoAlpha:0, ease: Power4.easeOut }, '-=0.3');
+
+                console.log('| data.from == 4 |', sl.childNodes);
+
+            }
+
+            if ( data.from == 5 ) {
+
+                tl.to(sl, 0, {autoAlpha:0, ease: Power4.easeOut }, '-=0.3');
+
+                console.log('| data.from == 5 |', sl.childNodes);
+
+            }
+
+
+
+            // console.log('*** sl.dataset.slide ***', sl.dataset.slide);
 
             // tl.to(sl.childNodes[3].childNodes[3], 0.3, { top: "14.2%",left: "23.8%",width: "42%", delay: 0.5 })
             //     .to(sl.childNodes[3].childNodes[3], 0.1, { autoAlpha:0})
@@ -128,10 +160,7 @@ PubSub.subscribe('gotoSlide', function (msg, data) {
 
             sl.classList.add('is-hidden');
 
-
-
             // console.log('-====',  sl.childNodes[3].childNodes[3])
-
 
         }
         if ( sl.dataset.slide == data.to ) {
@@ -139,12 +168,20 @@ PubSub.subscribe('gotoSlide', function (msg, data) {
             sl.classList.add('is-active');
             sl.dataset.state = ('visibility');
 
-            if ( data.to == 1 ) {
-                console.log('| data.from == 1 |', sl.childNodes);
+            // if ( data.to == 1 ) {
+            //     console.log('| data.from == 1 |', sl.childNodes);
+            //
+            //     tl.to(sl, 0.25, {autoAlpha:1, ease: Power4.easeOut }, '-=0.3')
+            //         .to(sl.childNodes[3].childNodes[3], 0.3, {  autoAlpha:0 })
+            //             .to(sl.childNodes[3].childNodes[1], 0.3, {  autoAlpha:1 }, '-=0.3');
+            //
+            // }
 
-                tl.to(sl, 0.25, {autoAlpha:1, ease: Power4.easeOut }, '-=0.3')
-                    .to(sl.childNodes[3].childNodes[3], 0.3, {  autoAlpha:0 })
-                        .to(sl.childNodes[3].childNodes[1], 0.3, {  autoAlpha:1 }, '-=0.3');
+            if ( data.to == 1 ) {
+
+                tl.to(sl, 0.25, {autoAlpha:1, ease: Power4.easeOut }, '-=0.3');
+
+                console.log('| data.to == 1 |', sl.childNodes);
 
             }
 
@@ -154,6 +191,7 @@ PubSub.subscribe('gotoSlide', function (msg, data) {
                     .to(sl.childNodes[3].childNodes[3], 0.1, {autoAlpha:1}, "-=0.5")
                         .to(sl.childNodes[3].childNodes[3], 0.3, {top: "47%",left: "-11%",width: "70%", ease: Power4.easeOut});
 
+                console.log('| data.to == 2 |', sl.childNodes);
             }
 
             if ( data.to == 3 ) {
@@ -162,7 +200,27 @@ PubSub.subscribe('gotoSlide', function (msg, data) {
                     .to(sl.childNodes[3].childNodes[3], 0.1, {autoAlpha:1}, "-=0.5")
                         .to(sl.childNodes[3].childNodes[3], 0.3, {top: "18%",left: "26%",width: "100%", ease: Power4.easeOut });
 
+                console.log('| data.to == 3 |', sl.childNodes);
             }
+
+            if ( data.to == 4 ) {
+
+                tl.to(sl, 0, {autoAlpha:1, ease: Power4.easeOut }, '-=0.3')
+                    .to(sl.childNodes[3].childNodes[3], 0.1, {autoAlpha:1}, "-=0.5")
+                    .to(sl.childNodes[3].childNodes[3], 0.3, {top: "10%",left: "-28%",width: "100%", ease: Power4.easeOut });
+
+                console.log('| data.to == 4 |', sl.childNodes);
+            }
+
+            if ( data.to == 5 ) {
+
+                tl.to(sl, 0, {autoAlpha:1, ease: Power4.easeOut }, '-=0.3');
+
+                console.log('| data.to == 5 |', sl.childNodes);
+
+            }
+
+
 
 
             // tl.to(sl, 0, {autoAlpha:1}, '-=0.3')
@@ -170,7 +228,6 @@ PubSub.subscribe('gotoSlide', function (msg, data) {
             //         .to(sl.childNodes[3].childNodes[3], 0.3, {top: "47%",left: "-11%",width: "70%", ease: Power4.easeOut, delay: 0.5});
 
             sl.classList.remove('is-hidden');
-
 
             // console.log('+====',  sl.childNodes[3].childNodes[3])
 
